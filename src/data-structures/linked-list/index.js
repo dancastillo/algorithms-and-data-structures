@@ -7,6 +7,9 @@ const LinkedList = function() {
 
 LinkedList.prototype = {
 
+  /**
+   * @return void
+   */
   print: function() {
     let listNode = this.head;
     let index = 1;
@@ -20,6 +23,10 @@ LinkedList.prototype = {
     console.log(listString);
   },
 
+  /**
+   * @param {Node} addNode
+   * @return void
+   */
   add: function(addNode) {
     let listNode = this.head;
     if (!listNode) {
@@ -34,6 +41,10 @@ LinkedList.prototype = {
     this.size++;
   },
 
+  /**
+   * @param {Node} firstNode
+   * @return void
+   */
   addFirst: function(firstNode) {
     if (!this.head) {
       this.head = firstNode;
@@ -44,6 +55,11 @@ LinkedList.prototype = {
     this.size++;
   },
 
+  /**
+   * @param {number} position
+   * @param {Node} addNode
+   * @return void
+   */
   addAtPosition: function(position, addNode) {
     let prevPosition = this.head;
 
@@ -65,6 +81,10 @@ LinkedList.prototype = {
     this.size++;
   },
 
+  /**
+   * @param {Node} removeNode
+   * @return void
+   */
   remove: function(removeNode) {
     const notInListMessage = '\nNode is not in the list.';
     if (this.size === 1 && this.head.value !== removeNode.value) {
@@ -90,6 +110,9 @@ LinkedList.prototype = {
     }
   },
 
+  /**
+   * @return void
+   */
   removeFist: function() {
     if (!this.head) {
       return;
@@ -98,6 +121,9 @@ LinkedList.prototype = {
     this.head = this.head.next;
   },
 
+  /**
+   * @return void
+   */
   removeLast: function() {
     if (!this.head) {
       return;
